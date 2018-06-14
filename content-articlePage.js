@@ -232,6 +232,7 @@ if (/https:\/\/bihu.com\/article\//.test(window.location.href)) {
             //$(document).ready(function(){
             $("#set-bwlist").click(function() {
                 //设置 div 元素的不透明级别：透明度取值(取值范围[0.0,1.0]) 
+
                 $(".mask").css("opacity", "0.3").css("position", "fixed").show();
                 
                 var bwlist =  $.parseJSON(localStorage.getItem(key + "_bwlist"));
@@ -338,8 +339,9 @@ if (/https:\/\/bihu.com\/article\//.test(window.location.href)) {
                 bwlist = $.parseJSON(localStorage.getItem(key + "_bwlist"));
             }
             //allitems += comments.length;
-            if(bwlist["switch"] == "false")
-                return;
+            if (bwlist !== null)
+                if(bwlist["switch"] == "false")
+                    return;
             comments.each(function() {
                 //var innerText = $(this).find("p.first-comment-content").text().length;
                 var userName = this.children[0].children[1].children[0].text + "";
