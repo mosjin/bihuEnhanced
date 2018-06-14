@@ -180,9 +180,14 @@ function getLatestArticle() {
     }
     $.get(window.location.href, function(res){});
     $.post(url, params, function(data) {
+        // if(typeof data === 'string'){
+        //     data = JSON.parse(data);
+        // }
+
         if (data.resMsg == 'success') {
             $("#zanLatest").show();
             var latestArc = data.data.list[0];
+            console.log(latestArc);
             var pubTime = new Date(latestArc.createTime);
             var timeStr = pubTime.getFullYear() + '-' + (pubTime.getMonth() + 1) + '-' + pubTime.getDate() + ' ' + pubTime.getHours() + ':' + pubTime.getMinutes() + ':' + pubTime.getSeconds();
 
@@ -228,7 +233,7 @@ function getLatestArticle() {
             }
 
         }
-    });
+    },"json" );
 
 
 

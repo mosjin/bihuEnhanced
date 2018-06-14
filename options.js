@@ -14,8 +14,8 @@ function save_options() {
   var bigV = document.getElementById('bigV').checked;
   var manualDraft = document.getElementById('manualDraft').checked;
   var autoDraft = document.getElementById('autoDraft').checked;
-  //var quickZan = document.getElementById('quickZan').checked;
-  //var autoZanAfterGetLatestArc = document.getElementById('autoZanAfterGetLatestArc').checked;
+  var quickZan = document.getElementById('quickZan').checked;
+  var autoZanAfterGetLatestArc = document.getElementById('autoZanAfterGetLatestArc').checked;
   var capBar = document.getElementById('capBar').checked;
   var bigVTimeDiff = document.getElementById('bigVTimeDiff').checked;
   var bigVTimeDiffMinutes = parseInt(document.getElementById('bigVTimeDiffMinutes').value);
@@ -24,7 +24,7 @@ function save_options() {
   }
   var config = {
     inpageSearch,addFav,autoPublish,editorEnhance,reloadIndex,bigV,
-    manualDraft,autoDraft,shareAbstract,//,quickZan,autoZanAfterGetLatestArc,
+    manualDraft,autoDraft,shareAbstract,quickZan,autoZanAfterGetLatestArc,
     capBar,bigVTimeDiff,bigVTimeDiffMinutes
   }
   chrome.storage.sync.set({
