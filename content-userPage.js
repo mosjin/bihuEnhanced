@@ -113,9 +113,11 @@ function addQuickZanDom() {
 function zanLatest() {
     var url = 'https://be02.bihu.com/bihube-pc/api/content/upVote';
     var id = $("#latestId").text();
-    var logInfo = localStorage.getItem('ANDUI_BIHU_LOGININFO');
-    var userId = JSON.parse(logInfo).userId;
-    var accessToken = JSON.parse(logInfo).accessToken;
+    //var logInfo = localStorage.getItem('ANDUI_BIHU_LOGININFO');
+    //var userId = JSON.parse(logInfo).userId;
+    //var accessToken = JSON.parse(logInfo).accessToken;
+    var userId  = JSON.parse(JSON.parse(localStorage.getItem('persist:root')).user).userId;
+    var accessToken = localStorage.getItem('ACCESS_TOKEN');
     var params = {
         userId,
         accessToken,
@@ -169,9 +171,11 @@ function getLatestArticle() {
     }
     console.log('try to get ' + id + '\'s article');
     var url = 'https://be01.bihu.com/bihu-be/api/content/show/getUserArtList';
-    var logInfo = localStorage.getItem('ANDUI_BIHU_LOGININFO');
-    var userId = JSON.parse(logInfo).userId;
-    var accessToken = JSON.parse(logInfo).accessToken;
+    //var logInfo = localStorage.getItem('ANDUI_BIHU_LOGININFO');
+    //var userId = JSON.parse(logInfo).userId;
+    //var accessToken = JSON.parse(logInfo).accessToken;
+    var userId  = JSON.parse(JSON.parse(localStorage.getItem('persist:root')).user).userId;
+    var accessToken = localStorage.getItem('ACCESS_TOKEN');     
     var params = {
         queryUserId: id,
         pageNum: 1,

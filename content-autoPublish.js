@@ -89,7 +89,7 @@ function getDraft(draftId, callback) {
         if (response.success) {
             var draft = response.result;
             curDraft = draft;
-            saveToLS(draft);
+            //saveToLS(draft);
             callback('');
         }
     })
@@ -112,7 +112,7 @@ function saveToLS(draft) {
 function getTargetDom() {
     console.log('try to get the target dom');
     try {
-        targetDomParent = document.getElementById('edit');
+        targetDomParent = document.getElementsByClassName('edit')[0];
         targetDom = document.getElementsByClassName('add-forum-bottom')[0];
         if (targetDom && targetDomParent) {
             console.log('got!')

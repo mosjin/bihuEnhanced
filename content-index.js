@@ -7,12 +7,12 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     console.log(message.method == 'prepareLocalStorage');
     if (message.method == 'prepareLocalStorage') {
         console.log('enter if 1');
-        saveToLS(message.task, function() {
-            console.log('in callback');
-            sendResponse({
-                'success': true
-            });
-        });
+        //saveToLS(message.task, function() {
+        //    console.log('in callback');
+        //    sendResponse({
+        //        'success': true
+        //    });
+        //});
     }
     return true;
 })
